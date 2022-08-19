@@ -8,8 +8,13 @@ on:
       - "docs/**"
       - mkdocs.yml
       - "tools/**"
+permissions:  # added using https://github.com/step-security/secure-workflows
+  contents: read
+
 jobs:
   deploy:
+    permissions:
+      contents: write  # for mkdocs gh-deploy to publish docs
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
