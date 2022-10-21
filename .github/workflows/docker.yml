@@ -11,14 +11,14 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: datadog/stratus-red-team
+  IMAGE_NAME: varunsh-coder/stratus-red-team
 
 jobs:
   docker-build-push:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v1
+        uses: step-security/harden-runner@int
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
